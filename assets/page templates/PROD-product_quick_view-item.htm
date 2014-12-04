@@ -26,7 +26,7 @@
 				</div>
 				<mvt:item name="product_display_imagemachine" param="body:product:id" />
 				<div class="row">
-					<p class="column whole align-left small"><a href="&mvte:global:sessionurl;Store_Code=suivant&Screen=PROD&Product_Code=&mvta:product:code;" target="_parent">View Product Details &raquo;</a></p>
+					<p class="column whole align-left small"><a href="&mvte:global:sessionurl;Store_Code=&mvta:store:code;&Screen=PROD&Product_Code=&mvta:product:code;" rel="nofollow" target="_parent">View Product Details &raquo;</a></p>
 				</div>
 			</div>
 			<!-- end product-information--images -->
@@ -50,7 +50,7 @@
 						</mvt:if>
 					</div>
 				</div>
-				<form method="post" action="&mvte:global:sessionurl;Screen=BASK" target="_parent" class="inline-labeling">
+				<form method="post" action="&mvte:global:sessionurl;Screen=BASK" target="_parent" id="js-purchase-product" class="inline-labeling">
 					<input type="hidden" name="Old_Screen" value="&mvte:global:Screen;" />
 					<input type="hidden" name="Old_Search" value="&mvte:global:Search;" />
 					<input type="hidden" name="Action" value="ADPR" />
@@ -96,13 +96,6 @@
 						</div>
 					</div>
 				</form>
-				<div class="breaker"></div>					
-				<div class="column whole np product-information--description">
-					<h4 class="nm uppercase">Product Details</h4>
-					<hr noshade />
-					&mvt:product:descrip;
-				</div>
-				<!-- end product-information--description -->
 			</div>
 			<!-- end product-information--purchase -->
 		</div>
