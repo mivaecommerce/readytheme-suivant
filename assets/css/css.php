@@ -26,7 +26,6 @@
 	include('tables.css');
 	include('colors.css');
 	include('slider.css');
-	include('tabs.css');
 	include('magnific-popup.css');
 	include('helpers.css');
 	include('structure.css');

@@ -9,12 +9,12 @@ var cornerstoneUX = {
 		
 		if (cornerstoneUX[pageID]) {
 			// ---- If the function exists, run it, otherwise, don't do anything. ---- //
-			$(document).ready(function () {
+			(function ($) {
 				cornerstoneUX[pageID]();
-			});
+			}(jQuery));
 		};
 		
-		$(document).ready(function () {
+		(function ($) {
 			// ---- Create the "main" element for older versions of IE ---- //
 			document.createElement('main');
 			
@@ -92,7 +92,7 @@ var cornerstoneUX = {
 			};
 			$(window).on('debouncedresize load', footerNavControl ());
 			
-		});
+		}(jQuery));
 	},
 	
 	sharedFunctions: {
@@ -205,14 +205,14 @@ var cornerstoneUX = {
 		// ---- Open Product Image Gallery ---- //
 		productGallery: function (trigger) {
 			trigger.on('click', function (e) {
-				var startAt = $(this).attr('data-index');
+				var startAt = Number($(this).attr('data-index'));
 				
 				e.preventDefault();
 				if (gallery.length > 0) {
 					$.magnificPopup.open({
 						callbacks: {
 							open: function () {
-								//$.magnificPopup.instance.goTo(startAt);
+								$.magnificPopup.instance.goTo(startAt);
 							}
 						},
 						gallery: {
@@ -268,14 +268,14 @@ var cornerstoneUX = {
 		// ---- Open Product Image Gallery ---- //
 		cornerstoneUX.sharedFunctions.productGallery($('#js-main-image-zoom'));
 		
-		var thumbnails = document.getElementById('js-thumbnails');
-		for (var i = 0; i < thumbnails.children.length; i++) {
-			(function (index) {
-				thumbnails.children[i].onclick = function () {
-					document.getElementById('js-main-image-zoom').setAttribute('data-index', index);
-				}
-			})(i);
-		};
+		var mainImageZoom = $('#js-main-image-zoom'),
+			thumbnails = $('#js-thumbnails');
+			
+		//console.log(window['image_data' + productID][0]['image_data'][2]);
+		thumbnails.on('click', 'div', function () {
+			var thumbnailIndex = $(this).attr('data-index');
+			mainImageZoom.attr('data-index', thumbnailIndex);
+		});
 
 		$.ajax({
 			cache: true,
@@ -495,6 +495,9 @@ var cornerstoneUX = {
 		// ---- Update Display When Attribute Machine Fires ---- //
 		MivaEvents.SubscribeToEvent('variant_changed', function () {
 			gallery.length = 0;
+			mainImageZoom.attr('data-index', 0);
+			//$('#js-main-image').attr('data-image', window['image_data' + productID][0]['image_data'][2]);
+			thumbnailIndex = 0;
 			outOfStock ();
 			selectedSwatch ();
 		});

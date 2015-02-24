@@ -245,6 +245,7 @@
 			bottom: 0;
 		}
 		.ctgy .mfp-iframe,
+		.srch .mfp-iframe,
 		.product-information--body {
 			background: #fff;
 			min-height: 40rem;
@@ -600,7 +601,8 @@
 
 /*
 ------------------------ =BASK PAGE ------------------------ */
-.basket-contents {
+.basket-contents,
+.order-contents {
 	padding: 0.75rem 0 0.75rem 0.75rem;
 }
 
@@ -683,18 +685,20 @@
 /*
 ------------------------ =OCST, OSEL, OPAY AND INVC PAGES ------------------------ */
 @media screen and (min-width: 768px) {
-	.ordl .navigation-set,
-	.ocst .navigation-set,
-	.ous1 .navigation-set,
-	.ousm .navigation-set,
-	.uatm .navigation-set,
-	.uatr .navigation-set,
-	.osel .navigation-set,
-	.opay .navigation-set {
+	.invc .horizontal-mega-menu,
+	.ordl .horizontal-mega-menu,
+	.ocst .horizontal-mega-menu,
+	.ous1 .horizontal-mega-menu,
+	.ousm .horizontal-mega-menu,
+	.uatm .horizontal-mega-menu,
+	.uatr .horizontal-mega-menu,
+	.osel .horizontal-mega-menu,
+	.opay .horizontal-mega-menu {
 		height: 0;
 		visibility: hidden;
 	}
 }
+.invc .mobile-navigation-bar,
 .ordl .mobile-navigation-bar,
 .ocst .mobile-navigation-bar,
 .ous1 .mobile-navigation-bar,
@@ -705,6 +709,7 @@
 .opay .mobile-navigation-bar {
 	display: none;
 }
+.invc .pre-header nav ul:last-child li,
 .ordl .pre-header nav ul:last-child li,
 .ocst .pre-header nav ul:last-child li,
 .ous1 .pre-header nav ul:last-child li,
@@ -785,6 +790,7 @@
 			height: 2rem;
 		}
 			.update-record label {
+				font-size: 0.75rem;
 				width: auto;
 			}
 
