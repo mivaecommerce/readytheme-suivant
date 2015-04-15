@@ -61,7 +61,7 @@
 					</div>
 				</mvt:if>
 				<div id="js-product-attributes" class="column whole product-attributes">
-					<mvt:item name="product_attributes" param="product:id" file="PROD-product_attributes-item.htm" />
+					<mvt:item name="product_attributes" param="product:id"  file="PROD-product_attributes-item.htm" />
 				</div>
 				<mvt:if expr="g.hasSwatches">
 					<div class="column whole product-swatches">
@@ -102,7 +102,7 @@
 	<!-- end product-information--purchase -->
 	<div class="breaker clear"></div>
 	<mvt:if expr="l.settings:related_product_count NE 0">
-		<mvt:item name="related_products" file="PROD-prodlist-item.htm" />
+		<mvt:item name="related_products"  file="PROD-prodlist-item.htm" />
 	</mvt:if>
 </div>
 <!-- end product-information -->

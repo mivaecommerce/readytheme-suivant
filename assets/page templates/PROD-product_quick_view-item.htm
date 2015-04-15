@@ -1,11 +1,11 @@
-<mvt:item name="html_profile" file="cssui-html-profile-item.htm" />
+<mvt:item name="html_profile"  file="cssui-html-profile-item.htm" />
 <head>
 	<mvt:if expr="NOT ISNULL l.settings:product:metafield:title">
 		<title>&mvt:product:metafield:title;</title>         
 	<mvt:else>
 		<title>&mvt:product:name;: &mvt:store:name;</title>
 	</mvt:if>
-	<mvt:item name="head" param="head_tag" file="cssui-global-head-item.htm" />
+	<mvt:item name="head" param="head_tag"  file="cssui-global-head-item.htm" />
 	<mvt:item name="attributemachine" param="head" />
 	<mvt:item name="product_display_imagemachine" param="head" />
 </head>
@@ -69,7 +69,7 @@
 							</div>
 						</mvt:if>
 						<div id="js-product-attributes" class="column whole product-attributes">
-							<mvt:item name="product_attributes" param="product:id" file="PROD-product_attributes-item.htm" />
+							<mvt:item name="product_attributes" param="product:id"  file="PROD-product_attributes-item.htm" />
 						</div>
 						<mvt:if expr="g.hasSwatches">
 							<div class="column whole product-swatches">

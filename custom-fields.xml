@@ -6,6 +6,7 @@
 	</ProductField_Add>
 	<ProductFieldTypeOption_Add code="product-flag" value="HOT" />
 	<ProductFieldTypeOption_Add code="product-flag" value="NEW" />
+	<ProductFieldTypeOption_Add code="product-flag" value="none" />
 	<ProductFieldTypeOption_Add code="product-flag" value="SALE" />
 </Module>
 

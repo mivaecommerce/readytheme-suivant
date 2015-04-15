@@ -9,12 +9,12 @@ var cornerstoneUX = {
 		
 		if (cornerstoneUX[pageID]) {
 			// ---- If the function exists, run it, otherwise, don't do anything. ---- //
-			(function ($) {
+			$(document).ready(function () {
 				cornerstoneUX[pageID]();
-			}(jQuery));
+			});
 		};
 		
-		(function ($) {
+		$(document).ready(function () {
 			// ---- Create the "main" element for older versions of IE ---- //
 			document.createElement('main');
 			
@@ -92,7 +92,7 @@ var cornerstoneUX = {
 			};
 			$(window).on('debouncedresize load', footerNavControl ());
 			
-		}(jQuery));
+		});
 	},
 	
 	sharedFunctions: {
@@ -639,6 +639,9 @@ var cornerstoneUX = {
 	jsPLST: function () {
 		// ---- Conform all subcategory and/or product DIVs to same height ---- //
 		cornerstoneUX.sharedFunctions.conformDisplay();
+		
+		// ---- Open Quick View ---- //
+		cornerstoneUX.sharedFunctions.openQuickView();
 	},
 	
 	jsSRCH: function () {
@@ -897,6 +900,11 @@ var cornerstoneUX = {
 	jsSMAP: function () {
 		// ---- Conform all site map DIVs to same height ---- //
 		cornerstoneUX.sharedFunctions.conformDisplay('.site-map');
+	},
+	
+	jsGFTL: function () {
+		// ---- Open Forgot Password ---- //
+		cornerstoneUX.sharedFunctions.openForgotPassword();
 	}
 };
 cornerstoneUX.init();
