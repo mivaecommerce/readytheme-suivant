@@ -1,0 +1,48 @@
+<mvt:item name="html_profile"  file="cssui-html-profile-item.htm" />
+<head>
+	<title>&mvt:store:name;: Checkout: Payment Information</title>
+	<base href="&mvt:global:basehref;" />
+	<mvt:item name="head" param="css_list" />
+	<mvt:item name="head" param="head_tag"  file="cssui-global-head-item.htm" />
+</head>
+<body class="OPAY one-column">
+<div id="site-container">
+	<div id="global-header"><mvt:item name="hdft" param="global_header"  file="global-header-item.htm" /></div>
+	<div id="navigation-bar"><mvt:item name="navbar"  file="cssui-navbar-item.htm" /></div>
+	<table id="content-container">
+		<tr>
+			<td id="left-navigation"><mvt:item name="category_tree"  file="" /></td>
+			<td id="main-content">
+				<div id="page-header"><mvt:item name="hdft" param="header"  file="PPHC-header-item.htm" /></div>
+
+				<h1>Payment Information</h1>
+
+				<div id="customer-fields" class="non-editable"><mvt:item name="customer"  file="PPHC-custflds-item.htm" /></div>
+				<div id="basket-contents" class="non-editable"><mvt:item name="basket"  file="PPHC-basket-item.htm" /></div>
+
+				<mvt:if expr="l.settings:messages:error_message_count">
+				<div class="error-message">
+				<mvt:foreach iterator="error" array="messages:error_messages">
+					&mvt:error;
+				</mvt:foreach>
+				</div>
+				</mvt:if>
+				<mvt:if expr="l.settings:messages:information_message_count">
+				<div class="information-message">
+				<mvt:foreach iterator="message" array="messages:information_messages">
+					&mvt:message;
+				</mvt:foreach>
+				</div>
+				</mvt:if>
+
+				<div style="text-align:left;"><iframe src="&mvt:paypaladv:hostedcheckouturl;" width="490" height="565" scrolling="no" style="border:none;"></iframe></div>
+				
+				<div id="page-footer"><mvt:item name="hdft" param="footer"  file="PPHC-footer-item.htm" /></div>
+			</td>
+		</tr>
+	</table>
+	<div id="bottom-wrap"></div>
+	<div id="global-footer"><mvt:item name="hdft" param="global_footer"  file="global-footer-item.htm" /></div>
+</div>
+</body>
+</html>

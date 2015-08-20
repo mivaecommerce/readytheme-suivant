@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+<form target="_parent" name="IFrameEscapeForm" action="&mvt:global:secure_sessionurl;" method="POST">
+	<input type="hidden" name="Store_Code" value="&mvte:global:Store:code;" />
+	<mvt:if expr="NOT ISNULL g.PayPalAdv_Screen">
+		<input type="hidden" name="Screen" value="&mvte:global:PayPalAdv_Screen;" />
+	<mvt:else>
+		<input type="hidden" name="Action" value="AUTH" />
+		<input type="hidden" name="Screen" value="INVC" />
+		<input type="hidden" name="PaymentMethod" value="&mvte:global:USER1;" />
+		<input type="hidden" name="SplitPaymentData" value="&mvte:global:USER2;" />
+		<input type="hidden" name="SECURETOKEN" value="&mvte:global:SECURETOKEN;" />
+	</mvt:if>
+</form>
+
+<script language="JavaScript">
+document.IFrameEscapeForm.submit();
+</script>
+
+</body>
+</html>

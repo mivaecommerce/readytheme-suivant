@@ -297,24 +297,20 @@ textarea[readonly] {
 	border-color: #ccc;
 	color: #777;
 }
-	input:-moz-placeholder,
-	textarea:-moz-placeholder {
+	:-moz-placeholder {
 		color: #8a7b7b;
 		font-size: inherit;
 	}
-	input::-moz-placeholder,
-	textarea::-moz-placeholder {
+	::-moz-placeholder {
 		color: #8a7b7b;
 		font-size: inherit;
 	}
-	input:-ms-input-placeholder,
-	textarea:-ms-input-placeholder {
-		color: #8a7b7b;
-		font-size: inherit;
-		line-height: inherit;
+	:-ms-input-placeholder {
+		color: #8a7b7b !important;
+		font-size: inherit !important;
+		line-height: inherit !important;
 	}
-	input::-webkit-input-placeholder,
-	textarea::-webkit-input-placeholder {
+	::-webkit-input-placeholder {
 		color: #8a7b7b;
 		font-size: inherit;
 		line-height: inherit;
